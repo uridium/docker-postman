@@ -2,8 +2,8 @@ FROM debian:stretch-slim
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ARG UID
-ARG GID
+ARG UID=1000
+ARG GID=1000
 
 RUN apt-get update -qq \
     && apt-get dist-upgrade -y -qq \
