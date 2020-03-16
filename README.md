@@ -7,17 +7,17 @@ Postman container for API development.
 
 ### Requirements
 
-* docker-engine
+* docker
 * make
 
 ### Install/Usage
 
-Run `make` to fire up application.
+Simply run `make` to fire up Postman
 
-You can also only download an image from a [registry](https://hub.docker.com/r/uridium/postman/) if you want:
+You can also download the image from a [registry](https://hub.docker.com/r/uridium/postman/):
 
     make pull
 
-or just build an image from a Dockerfile:
+or just build the image from a Dockerfile:
 
     make build
