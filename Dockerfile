@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:stable-slim
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -11,8 +11,8 @@ RUN apt-get update -qq \
         ca-certificates \
         curl \
         libasound2 \
-        libgconf2-4 \
-        libgtk2.0-0 \
+        libgconf-2-4 \
+        libgtk-3-0 \
         libnss3 \
         libx11-xcb1 \
         libxss1 \
@@ -20,10 +20,8 @@ RUN apt-get update -qq \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
-RUN cd /usr/local \
-    && curl -sL http://dl.pstmn.io/download/latest/linux64 -o postman.tar.gz \
-    && tar xf postman.tar.gz \
-    && rm -f postman.tar.gz
+RUN curl -sL http://dl.pstmn.io/download/latest/linux64 \
+    | tar -xz -C /usr/local
 
 RUN groupadd -g $UID postman \
     && useradd -m -u $UID -g postman postman
