@@ -1,6 +1,7 @@
 REPO = uridium/postman
 UID = $(shell id -u)
 GID = $(shell id -g)
+CONFDIR = .config/Postman
 
 .PHONY: pull build run clean
 
@@ -13,7 +14,8 @@ build:
 	docker build --build-arg UID=$(UID) --build-arg GID=$(GID) -t $(REPO) .
 
 run:
-	docker run --rm --network host --name postman -u "$(UID):$(GID)" -v "$(shell pwd)/.config:/home/postman/.config/Postman:rw" -e DISPLAY $(REPO)
+	test -d $${HOME}/$(CONFDIR) || mkdir $${HOME}/$(CONFDIR)
+	docker run --rm --network host --name postman -u "$(UID):$(GID)" -v "$${HOME}/$(CONFDIR):/home/postman/$(CONFDIR):rw" -e DISPLAY $(REPO)
 
 clean:
 	docker rmi $(shell docker images $(REPO) -qa)
