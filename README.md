@@ -1,6 +1,7 @@
 Docker Postman
 --
 [![Docker Hub](https://img.shields.io/docker/cloud/build/uridium/postman.svg)](https://hub.docker.com/r/uridium/postman/builds)
+[![Latest tag](https://img.shields.io/github/v/tag/uridium/docker-postman)](https://hub.docker.com/r/uridium/postman/tags)
 
 Postman container for API development.
 
