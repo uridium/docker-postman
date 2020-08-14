@@ -22,3 +22,7 @@ You can also download the image from a [registry](https://hub.docker.com/r/uridi
 or just build the image from a Dockerfile:
 
     make build
+
+To [verify](https://github.com/GoogleContainerTools/container-structure-test) the content and structure of the container:
+
+    make test
