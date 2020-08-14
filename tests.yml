@@ -1,0 +1,8 @@
+---
+schemaVersion: '2.0.0'
+
+fileExistenceTests:
+- name: '/usr/local/Postman/app/Postman'
+  path: '/usr/local/Postman/app/Postman'
+  shouldExist: True
+  permissions: '-rwxr-xr-x'
